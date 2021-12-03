@@ -1,10 +1,11 @@
 import React from "react";
 import "./Card.css";
 import { Link } from "react-router-dom";
-export default function Card({ movie }) {
+export default function Card({ movie, content }) {
   console.log("Movie ==> ", movie.image);
+
   return (
-    <Link to={`/movie/${movie.id}`}>
+    <Link to={`/${content}/${movie.id}`}>
       <article
         className="Card"
         style={{ backgroundImage: `url(${movie.image})` }}
@@ -19,4 +20,4 @@ export default function Card({ movie }) {
 // ==> key from Route
 // ==> value from Link
 
-// <Link to={"/movie/" + movie.id}>
+// <Link to={'/' + content +'/'+ movie.id}>

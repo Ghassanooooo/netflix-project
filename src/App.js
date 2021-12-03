@@ -20,7 +20,7 @@ function App() {
           <Route path="/movies" element={<Movies />} />
           <Route path="/movie/:pageId" element={<Movie />} />
           <Route path="/tv-shows" element={<TvShows />} />
-          <Route path="/tv-show/:pageId" element={<TvShow />} />
+          <Route path="/tv-show/:tvShowId" element={<TvShow />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
@@ -28,5 +28,6 @@ function App() {
     </>
   );
 }
+//let pageId = '12311aasdc'
 
 export default App;

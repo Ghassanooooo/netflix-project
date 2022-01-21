@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import Card from "./Card/Card";
 import "./Section.css";
 export default function Section({ title, data, content }) {
-  console.log(title, data);
+
 
   return (
     <section className="Section">

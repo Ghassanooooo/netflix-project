@@ -2,7 +2,7 @@ import React from "react";
 import "./Card.css";
 import { Link } from "react-router-dom";
 export default function Card({ movie, content }) {
-  console.log("Movie ==> ", movie.image);
+ 
 
   return (
     <Link to={`/${content}/${movie.id}`}>

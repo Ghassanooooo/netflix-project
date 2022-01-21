@@ -8,14 +8,14 @@ export default function TvShow() {
   const [tvShowObject, setTvShowObject] = useState({});
   const [tvShowSeason, setTvShowSeason] = useState({});
 
+
+  useEffect(() => {
   const getTvShowById = async()=>{
     const res = await fetch(`${backendURL}/tv-show/${tvShowId}`)
     const data = await res.json()
     setTvShowObject(data)
     setTvShowSeason(data?.seasons[0])
   }
-
-  useEffect(() => {
   getTvShowById()
   }, [tvShowId]);
 

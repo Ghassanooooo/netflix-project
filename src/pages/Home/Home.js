@@ -37,7 +37,7 @@ export default function Home() {
   }
 
   useEffect(()=>{
-  // fetch the data
+
   getActionMovies()
   getNewMovies()
   getActionTvShows()

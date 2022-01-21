@@ -8,40 +8,38 @@ import { Modal } from "react-bootstrap";
 const backendURL= process.env.REACT_APP_BACKEND_URL
 
 export default function TvShowEpisode() {
-  
+
   const { tvShowId, seasonId, episodeId } = useParams();
   const [tvShow, setTvShow] = useState({});
   const [season, setSeason] = useState({});
   const [episode, setEpisode] = useState({});
   const [isOpen, setIsOpen] = useState(false);
 
+
+
+
+
+
+
+useEffect(() => {
 const getEpisodeById= async()=>{
 const res= await fetch(`${backendURL}/tv-show-episode/${tvShowId}/${seasonId}/${episodeId}`)
 const data = await res.json()
 setEpisode(data)
 
 }
-
 const getSeasonById=async()=>{
-
   const res= await fetch(`${backendURL}/tv-show-season/${tvShowId}/${seasonId}`)
   const data =await res.json()
-
-
-  setTvShow(data)
+  setSeason(data)
 }
+
 
 const getTvShowById = async()=>{
   const res= await fetch(`${backendURL}/tv-show/${tvShowId}`)
   const data = await res.json()
   setTvShow(data)
 }
-
-
-
-
-
-  useEffect(() => {
   getEpisodeById()
   getSeasonById()
   getTvShowById()

@@ -11,16 +11,13 @@ export default function Movie() {
   const [movieObject, setMovieObject] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const getMovieById= async ()=>{
+
+  useEffect(() => {
+    const getMovieById= async ()=>{
   const res = await fetch(`${backendURL}/movie/${pageId}`)
   const data = await res.json()
   setMovieObject(data)
   }
-
-  useEffect(() => {
-    /** From React Docs:
-     The function passed to useEffect will run after the render is committed to the screen.
-    */
   getMovieById()
   }, [pageId]);
 
